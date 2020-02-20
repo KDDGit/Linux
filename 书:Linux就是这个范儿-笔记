@@ -1,0 +1,173 @@
+第一章 亲密接触
+
+	发行版
+		发行版主要三个分支：RedHat、Slackware和Debian。
+		每个分支都有代表性的商业服务器级发行版：
+			Red Hat Enterprise Linux，简称RHEL; 
+			SUSE Linux Enterprise，简称SUSE; 
+			Ubuntu Server，简称Ubuntu。
+		Linux本身不是一个完整的系统，只是一个内核，发行版只是在内核上添加了应用程序，这些应用程序基本上来源于GNU社区
+		
+		软件安装方法：rmp、deb、源码三种方式
+		
+		发行版选择: CentOS
+		
+		RHEL相对SUSE、Ubuntu的优势，对KVM虚拟机的支持
+		
+		RHEL在对外发行的时候采用两种方式: 一种就是收费的二进制方式，一种就是完全免费的源代码方式。CentOS就是利用完全免费的RHEL的源代码重新编译而成的，
+    免费提供给大家，所以本质上与RHEL没什么区别。唯一的区别就更新频率没有付费的RHEL快，当然，也可以使用RHEL的源代码构建自己的发行版，至于是否收费，
+    自己说的算。
+	
+	安装系统
+		可百度CentOS安装步骤
+		
+	登录系统
+		Linux用户划分为根用户（root）和普通用户两种
+		
+	图像界面
+		Linux是没有界面的，是有一个软件提供了界面的功能。先前这个软件是XFree86现在是xorg
+		X、xorg、KDE、GNOME之间的关系？
+		X是一个协议，不是具体软件。如Apache是通过HTTP协议来提供服务的。xorg是通过X协议来提供图像用户界面服务。Linux上的那些拥有图像用户界面的软件实际上
+    是xorg的客户端。
+		如果系统只有xorg是不能提供图像化界面的，至少还需要有个X客户端程序。而且这个X客户端程序还有一个专有名称窗口管理器，英文叫做Window Manager,简称WM。
+    WM也不是一个具体的软件，而是一类软件。诸如KDE、GNOME这些就是包括各自的窗口管理器，也有一些单独的窗口管理器，如FVWM、Openbox、IceWM 等。它们控制
+    窗口外观、位置和提供用户去操作这些窗口程序的方法。
+
+		$ startx	//来启动xorg和默认的WM
+		
+		对于那些默认使用图形用户界面的Linux系统，还有一个十分重要的X客户端需要启动，就是显示管理器，英文叫做Display Manager， 简称DM。它是专门负责图形
+    界面的用户登录问题的。也就是说，系统启动之后第一个要启动的X客户端程序就应该是DM，而且没有人能关闭掉它。DM也是一类软件，具体的应该是XDM、KDM或GDM等。
+
+	架构设计
+		Linux界面的基本结构如下：
+		
+		图。。。。。
+	
+	桌面环境
+		Linux图形界面四杰：GNOME、KDE、XFCE、LXDE。他们并不是单一软件，而是一套软件集合，比如WM、DM、应用程序框架等。
+		
+		KDE初学者的首选
+			KDE是完全采用Qt程序库开发的，Qt是一个非常优秀的C++跨平台图形界面开发库。与java相比，Java能一次编译到处运行，Qt可以一次编码到处编译。Qt是一个
+      超级平台，这里拥有功能异常丰富的应用，包括各种跨平台组件、办公套件、开发套件。Qt是用C++开发跨平台图形应用的首先程序库。对于学习和掌握Qt，KDE是
+      非常理想的平台。
+			
+		GNOME不可磨灭的经典
+			虽然GNOME3是的GNOME从能用变的不能用了，但是GNOME2依然是不可磨灭的经典。GNOME是专门为Linux设计的。GNOME的基础是GIMP Toolkit GTK+.GNOME提供
+      两个东西，一是GNOME桌面环境，二是GNOME开发平台，CORBA就是典型例子。
+			目前的主流发行版：RHEL、CentOS、Ubuntu等都是以GNOME为默认桌面。
+			
+		XFCE轻量、简单、高效
+			XFCE设计的目的：快速加载并用来执行程序，并占用系统资源少。XFCE与GNOME一样，基于GTK+开发。XFCE不仅可以作为桌面环境使用，还可以作为程序库来开发
+      第三方程序。
+			
+		LXDE更轻，同样精悍
+			中国台湾人开发。LXDE没有自己的WM，选用了Openbox作为默认WM。LXDE同样采用GTK+开发。
+	
+	命令行
+		用户和系统不能直接打交道，需要中间人，中间人是shell。我们从键盘输入命令给shell，shell再交给系统去执行。
+		
+		Linux系统还提供一个叫终端模拟器的程序。这个程序打开一个窗口，让我们与shell交流。Linux系统上的模拟器终端有多个，例如gnome-terminal 、konsole、
+    xterm、rxvt、 kvt、nxterm和eterm等，而大多数Linux发行版会同时支持几种。
+		
+		普通用户	$ cd /
+		root用户	# cd /
+	
+	常用命令：
+		目录和文件处理
+			mkdir	创建目录
+			ls		列出目录下内容
+			cd		切换目录
+			pwd		显示当前目录
+			cp		拷贝文件及目录
+			mv		移动/重命名文件
+			rm		删除文件或目录
+		文本处理
+			cat		连接文件打印到标准输出
+			More	查看文件内容，按空格继续，按Q结束
+			less	查看文件内容，可以上下滚动浏览
+			head	查看文件头部内容
+			tail	查看文件尾部内容
+			Echo	显示一行文本
+		系统管理
+			ps		进程查看命令
+			kill	删除执行中的程序或工作
+			jbos	查看后台执行命令的序号
+			bg		指定号码的命令进程放到后台执行
+			fg		指定号码的命令进程放到前台执行
+		文件系统
+			du		查看目录或文件所占用磁盘空间的大小
+			df		检查文件系统的磁盘空间占用情况
+	快捷键
+		
+		表格。。。。。。
+		
+		可以使用bash-completion增强版的自动补齐，安装方法百度
+	
+	帮助
+		man 命令名
+		man 配置文件
+			使用man时，输入“q”退出帮助，man默认使用的是less
+		info和man功能相似
+		“命令名 -help”简略的命令帮助 
+		
+第二章 溶于心而表于行
+	接下来的内容都是基于文本命令行，Linux是多用户多任务分时操作系统
+	Linux用户
+		理解Linux用户，用户组
+		/etc/passwd	
+			作用：用户名文件
+			格式：用户名：密码：UID：GID：用户全名：home 目录：shell
+			注：UID和GID特殊；0对应root用户；1~499系统用户；500~4294967295分配给普通用户
+		/etc/group		
+			作用：用户组文件
+			格式：组名：用户组密码：GID：用户组内的用户名
+		/etc/shadow		
+			作用：密码文件
+			
+	管理用户和组
+		添加新用户
+			adduser或useradd（通用）
+		设置密码
+			passwd或chage
+		修改用户
+			usermod
+		用户组的管理
+			groupadd	组添加
+			groupmod	组修改
+			groupdel	组删除
+			gpasswd		管理密码
+	
+	sudo命令
+		可以赋予普通用户一些特权
+		给用户赋予sudo特权，修改/etc/sudoers文件中的内容
+		例：
+			jagen ALL=(ALL)	ALL				//给用户jagen赋予特权
+			%wheel ALL=(ALL) ALL			//让wheel组用户拥有特权
+			%wheel ALL=(ALL) NOPASSWD:ALL	//wheel组用户不用输入密码即可获取特权，单用户也可这样写
+			%users ALL=/sbin/mount /mnt/cdrom, /sbin/umount /mnt/cdrom
+				//这个限制让users用户可以执行：
+					$sudo mount /mnt/cdrom
+					$sudo unmount /mnt/cdrom
+				  除此之外的指令拒绝执行
+			%users ALL=(ALL) ALL,!/usr/sbin/adduser,!/usr/sbin/useradd
+				//使users用户组无法使用sudo特权给系统添加新用户
+				
+		su		临时切换用户
+		exit	切换回原来用户
+		
+		在/etc/sudoers文件中禁止su被sudo特权执行
+	
+	获取当前用户名
+		$ whoami
+		$ who am i
+		$ who
+		
+		使用su命令切换到root用户，“whoami”命令变化了，“who am i”和“who”没变化
+	
+	目录与文件
+		Linux的文件组织方式是从“/”根目录开始的。ls可以查看文件和目录，蓝色代表目录，其他颜色代表文件。
+		Linux不仅使用颜色来区分文件与目录，还用来区分文件种类。具体配置文件/etc/DIR_COLORS规定
+		
+		ls命令后加“--color=auto”可让没配置的版本支持颜色区分文件
+		alias命令创建命令别名：$ alias ls='ls --color=auto' 。为了永久生效，可添加到/etc/bashrc或/home/<usr>/.bashrc文件中，前者所有用户生效，后者
+    对<user>有效
