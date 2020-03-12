@@ -19,36 +19,36 @@ A:
   如果你只是运行apt-get install rubygems,你会得到一个不太新的版本(或者根本没有任何东西,这取决于rubygems是在Ubuntu存储库中还是仅在PPA中).
   
   
- 常用软件
-     1、WPS
-        在“Ubuntu软件”中搜索WPS安装即可
-     2、搜狗输入法
-        在浏览器中搜索“搜狗输入法”下载Linux版本，安装即可
-        注：在命令行输入fcitx-configtool 打开fcitx界面进行设置
-     3、引导修复
-        Q：
-          Windows一更新，Ubuntu就进不去了
-        A：
-        安装boot-repair    
-            sudo add-apt-repository ppa:yannubuntu/boot-repair
-            sudo apt-get update
-            sudo apt-get install boot-repair
-        先备份下grub引导菜单
-            cd /boot/grub
-            sudo cp grub.cfg grub.cfg.bak
-        然后打开“引导修复”或输入 sudo boot-repair &，待它自动扫描后点击“推荐修复”就可以了。然后重启电脑，此时应该能正确进入Ubuntu，
-        但grub菜单多了一大堆东西。如果你原来备份的菜单没有问题，直接恢复
-            sudo cp grub.cfg.bak grub.cfg
-        否则就只能手动删掉这个grub.cfg中的无用内容了。
-      4、VLC
-        在“Ubuntu软件”中搜索 VLC (视频播放器)安装即可
-      5、GIMP
-         GIMP免费的，可以实现 PS 的大部分功能
-      6、Dash to Dock
-         在“Ubuntu软件”中搜索 Dash to Dock 安装即可，修改启动栏、修改主题用
-      7、kylin
-         中文版软件商城，在在“Ubuntu软件”中搜索 kylin 安装或
-         sudo apt install ubuntu-kylin-software-center
+ 常用软件     
+     1、WPS      
+        在“Ubuntu软件”中搜索WPS安装即可       
+     2、搜狗输入法        
+        在浏览器中搜索“搜狗输入法”下载Linux版本，安装即可        
+        注：在命令行输入fcitx-configtool 打开fcitx界面进行设置      
+     3、引导修复     
+        Q：      
+          Windows一更新，Ubuntu就进不去了        
+        A：      
+        安装boot-repair           
+            sudo add-apt-repository ppa:yannubuntu/boot-repair      
+            sudo apt-get update     
+            sudo apt-get install boot-repair        
+        先备份下grub引导菜单        
+            cd /boot/grub       
+            sudo cp grub.cfg grub.cfg.bak       
+        然后打开“引导修复”或输入 sudo boot-repair &，待它自动扫描后点击“推荐修复”就可以了。然后重启电脑，此时应该能正确进入Ubuntu，        
+        但grub菜单多了一大堆东西。如果你原来备份的菜单没有问题，直接恢复      
+            sudo cp grub.cfg.bak grub.cfg       
+        否则就只能手动删掉这个grub.cfg中的无用内容了。     
+      4、VLC     
+        在“Ubuntu软件”中搜索 VLC (视频播放器)安装即可      
+      5、GIMP        
+         GIMP免费的，可以实现 PS 的大部分功能     
+      6、Dash to Dock        
+         在“Ubuntu软件”中搜索 Dash to Dock 安装即可，修改启动栏、修改主题用       
+      7、kylin       
+         中文版软件商城，在在“Ubuntu软件”中搜索 kylin 安装或      
+         sudo apt install ubuntu-kylin-software-center      
         
         
         
