@@ -46,6 +46,9 @@ A:
          GIMP免费的，可以实现 PS 的大部分功能
       6、Dash to Dock
          在“Ubuntu软件”中搜索 Dash to Dock 安装即可，修改启动栏、修改主题用
+      7、kylin
+         中文版软件商城，在在“Ubuntu软件”中搜索 kylin 安装或
+         sudo apt install ubuntu-kylin-software-center
         
         
         
