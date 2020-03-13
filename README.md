@@ -18,6 +18,12 @@ A:
   3)apt-get install导致apt-get在其数据库中找到包并下载并安装指定的文件.在这种情况下,它会找到rubygems包,从ppa：maco.m/ruby 下载并安装它.
   如果你只是运行apt-get install rubygems,你会得到一个不太新的版本(或者根本没有任何东西,这取决于rubygems是在Ubuntu存储库中还是仅在PPA中).
   
+ 驱动信息(已安装驱动)    
+    1、声卡
+        lspci | grep -i audio
+    2、显卡
+        lspci | grep -i vga
+  
   
  常用软件     
      1、WPS      
