@@ -2,7 +2,7 @@
 # 开发环境搭建
 
 *****
-##JDK   
+## JDK   
      新建目录：sudo mkdir /usr/java   
     移动文件：sudo mv jdk-8u121-linux-x64.tar.gz /usr/java   
     解压文件：tar -zxvf jdk-8u121-linux-x64.tar.gz
