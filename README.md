@@ -1,4 +1,9 @@
 # Linux
+
+### [jdk、eclipse、node配置](https://github.com/KDDGit/Linux/blob/master/jdk%E3%80%81eclipse%E3%80%81node%E5%AE%89%E8%A3%85)
+
+
+
 linux相关知识
 
 Q：   
