@@ -1,16 +1,17 @@
-#开发环境搭建
+
+# 开发环境搭建
 
 *****
 ##JDK   
-     新建目录：sudo mkdir /java   
-    移动文件：sudo mv jdk-8u121-linux-x64.tar.gz /java   
+     新建目录：sudo mkdir /usr/java   
+    移动文件：sudo mv jdk-8u121-linux-x64.tar.gz /usr/java   
     解压文件：tar -zxvf jdk-8u121-linux-x64.tar.gz
-    配置环境变量：sudo gedit /etc/profile
+    配置环境变量：sudo gedit ~./bashrc
           添加以下内容：
                   #set Java environment
-
-                  export JAVA_HOME=/dengyang/jdk1.8.0_56
+                  export JAVA_HOME=/usr/java/jdk1.8.0_56
                   export JRE_HOME=$JAVA_HOME/jre
                   export CLASSPATH=.:$JAVA_HOME/lib:$JRE_HOME/lib:$CLASSPATH
                   export PATH=$JAVA_HOME/bin:$JRE_HOME/bin:$PATH
-      输入java -version验证
+      是配置生效：source ~/.bashrc
+      验证输入：java -version
